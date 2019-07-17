@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.cruds.exception.StudentException;
 
-public class Student implements Serializable {
+public class Student implements Serializable, Comparable<Student> {
 	
 	public int rollNo;
 	private String name;
@@ -54,13 +54,15 @@ public class Student implements Serializable {
 		this.name = name;
 	}
 
-/*	public String getLastName() {
-		return lastName;
+	@Override
+	public String toString() {
+		return "Student [rollNo=" + rollNo + ", name=" + name + "]";
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}*/
-
+	@Override
+	public int compareTo(Student o) {
+		System.out.println("This roll no " + this.rollNo + " **** Other" + o.getRollNo());
+		return this.rollNo - o.getRollNo();
+	}
 	
 }

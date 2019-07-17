@@ -1,11 +1,12 @@
 package com.cruds.thread;
 
-public class User implements Runnable {
+public class User2 implements Runnable {
+
 	Printer p;
 	String msg;
 	Thread t;
 	
-	public User(Printer p, String msg)
+	public User2(Printer p, String msg)
 	{
 		this.p = p;
 		this.msg = msg;
@@ -15,6 +16,9 @@ public class User implements Runnable {
 	
 	@Override
 	public void run() {
-			p.print(msg);		
-	}
+		
+			p.testPrint(msg);
+				
+	}	
+
 }
